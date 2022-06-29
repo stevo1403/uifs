@@ -20,12 +20,12 @@ const path = require('path');
     const { image_url  } = req.query;
     
     if (!image_url){
-      resp.status(400).send("URL query parameter 'image_url' is required!");
+      return resp.status(400).send("URL query parameter 'image_url' is required!");
     }
 
 
     try{
-      const image_path = await filterImageFromURL(image_url);
+      const image_path = await filterImageFromURL(image_url as string);
       return resp.status(200).sendFile(image_path, (err)=>{
         if (fs.existsSync(image_path)){
           deleteLocalFiles([image_path]);
@@ -33,7 +33,7 @@ const path = require('path');
       });
     }
     catch(error){
-      resp.status(422).send("Unprocessable entity");
+      return resp.status(422).send("Unprocessable entity");
     }
 
   })
