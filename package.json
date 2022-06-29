@@ -8,6 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf www/ || true",
     "builds": "npm run clean && tsc && cp package.json www/package.json && mkdir www/tmp/ && cd www && zip -r Archive.zip . && cd ..",
+    "deploy": "npm run build && npm run start",
     "build": "tsc -p tsconfig.json",
     "dev": "ts-node-dev --respawn --transpile-only ./src/server.ts",
     "start": "npx ts-node-dev --respawn ./www/server.js"
