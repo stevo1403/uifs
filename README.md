@@ -1,2 +1,3 @@
-# uifs
+# UIFS
 Udagram Image Filtering Microservice
+
