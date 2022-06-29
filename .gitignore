@@ -112,3 +112,6 @@ dist
 
 # Transpiled JS files
 www/
+
+# Elastic Beanstalk extensions
+.ebextensions/
