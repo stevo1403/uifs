@@ -10,7 +10,7 @@
     "builds": "npm run clean && tsc && cp package.json www/package.json && mkdir www/tmp/ && cd www && zip -r Archive.zip . && cd ..",
     "build": "tsc -p tsconfig.json",
     "dev": "ts-node-dev --respawn --transpile-only ./src/server.ts",
-    "start": "ts-node-dev --respawn ./www/server.js"
+    "start": "npx ts-node-dev --respawn ./www/server.js"
   },
   "repository": {
     "type": "git",
@@ -28,7 +28,8 @@
     "@types/node": "^11.13.17",
     "ts-node-dev": "^1.0.0-pre.40",
     "tslint": "^5.18.0",
-    "typescript": "^3.5.3"
+    "typescript": "^3.5.3",
+    "npx": "^10.2.2"
   },
   "dependencies": {
     "express": "4.17.1",
