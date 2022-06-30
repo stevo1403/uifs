@@ -33,7 +33,7 @@ const path = require('path');
       });
     }
     catch(error){
-      return resp.status(422).send("Unprocessable entity");
+      return resp.status(422).send("422 Unprocessable entity.");
     }
 
   })
