@@ -25,8 +25,8 @@ Node-Express application which runs a simple script to process images. This was 
 `eb open`
 
 ### Filter an image through the service
-**Format:** http://`environment-name`.`region`.elasticbeanstalk.com/filteredimage?image_url=`<image-url>`
-**Example:** [UIFS](http://uifs-dev.us-east-1.elasticbeanstalk.com/filteredimage?image_url=https://upload.wikimedia.org/wikipedia/commons/b/bd/Golden_tabby_and_white_kitten_n01.jpg)
+* **Format:** http://`environment-name`.`region`.elasticbeanstalk.com/filteredimage?image_url=`<image-url>`
+* **Example:** [UIFS](http://uifs-dev.us-east-1.elasticbeanstalk.com/filteredimage?image_url=https://upload.wikimedia.org/wikipedia/commons/b/bd/Golden_tabby_and_white_kitten_n01.jpg)
 
 ### Delete the application
 `eb terminate uifs-dev --all`
