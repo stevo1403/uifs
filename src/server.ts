@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
 import bodyParser from 'body-parser';
 import {filterImageFromURL, deleteLocalFiles} from './util/util';
 
@@ -16,8 +16,12 @@ const path = require('path');
   // Use the body parser middleware for post requests
   app.use(bodyParser.json());
 
-  app.get("/filteredimage", async(req, resp) =>{
-    const { image_url  } = req.query;
+  app.get("/filteredimage", async(req: Request , resp: Response) =>{
+    type GETQueries = {
+      image_url: string;
+    };
+    
+    const { image_url } = req.query as GETQueries;
     
     if (!image_url){
       return resp.status(400).send("URL query parameter 'image_url' is required!");
